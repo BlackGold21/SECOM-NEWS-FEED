@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+.botones-captura {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-align: right;
+}
+.formulario {
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+}
+.botones-consulta {
+    width: 100%;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.dx-button-success {
+    background-color: #7D3A9A !important;
+}
+.dx-toolbar {
+    width: 100%;
+    background-color: #7D3A9A;
+    color: #fff ;
+    padding: 0;
+    overflow: visible;
+}
+
+.dx-toolbar-label .dx-toolbar-item-content{
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

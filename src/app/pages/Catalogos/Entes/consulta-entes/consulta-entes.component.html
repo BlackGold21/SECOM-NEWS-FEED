@@ -1,0 +1,39 @@
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+        <div class="botones-consulta">
+            <dx-button (click)="Nuevo()" text="Nuevo" icon="far fa-file">
+            </dx-button>
+            <dx-button (click)="MostrarPopup()" text="Eliminar" icon="far fa-trash-alt">
+            </dx-button>
+            <dx-button (click)="Regresar()" text="Regresar" icon="fas fa-reply">
+            </dx-button>
+        </div>
+        <dx-data-grid class="dx-card wide-card" [dataSource]="entes" keyExpr="id_ente" [showBorders]="true"
+            [focusedRowEnabled]="true" [focusedRowIndex]="0" [columnAutoWidth]="true" [columnHidingEnabled]="true"
+            [showRowLines]="true" [loadPanel]="{text:'Cargando...'}" [(focusedRowKey)]="focusedRowKey"
+            (onRowDblClick)="Editar($event)">
+
+            <dxo-selection mode="single" [deferred]="true"></dxo-selection>
+            <dxo-paging [pageSize]="100"></dxo-paging>
+            <dxo-pager [showPageSizeSelector]="true" [showInfo]="true"></dxo-pager>
+            <dxo-filter-row [visible]="true"></dxo-filter-row>
+            <dxo-export [enabled]="true"></dxo-export>
+
+            <dxi-column dataField="id_ente" caption="ID" [width]="90" captios="ID" [hidingPriority]="4">
+            </dxi-column>
+            <dxi-column dataField="nombre" caption="Ente">
+            </dxi-column>
+        </dx-data-grid>
+    </div>
+
+    <dx-popup [width]="500" [height]="200" [showTitle]="true" title="Eliminar" [dragEnabled]="true"
+        [closeOnOutsideClick]="true" [showCloseButton]="true" container=".dx-viewport" [(visible)]="popup_visible">
+        <h3 style="text-align: center;">¿Desea eliminar este estado?</h3>
+        <div style="margin-top: auto; text-align: right;">
+            <dx-button (click)="Eliminar()" text="Eliminar" icon="fas fa-trash-alt">
+            </dx-button>
+            <dx-button (click)="popup_visible=false" text="Cancelar" icon="fas fa-reply">
+            </dx-button>
+        </div>
+    </dx-popup>
+</div>

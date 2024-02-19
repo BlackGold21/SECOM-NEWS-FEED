@@ -1,0 +1,20 @@
+::ng-deep .dx-button-has-text .dx-button-content {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+dx-button {
+    border-radius: 0%;
+    background-color: transparent;
+    border: none;
+}
+
+::ng-deep .dx-datagrid-header-panel {  
+    float: none;
+    position: absolute;  
+    top: 0;
+    right: 0;
+    z-index: 9999;
+}

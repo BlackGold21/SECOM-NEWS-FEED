@@ -1,0 +1,36 @@
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+        <dx-load-panel [closeOnOutsideClick]="false" [(visible)]="cargando" [showPane]="true" [shading]="true"
+            shadingColor="rgba(0,0,0,0.4)" message="Cargando...">
+        </dx-load-panel>
+        <dx-form class="formulario" [formData]="Usuarios" [labelLocation]="'top'" [showColonAfterLabel]="true"
+            validationGroup="Grupos_Permisos" [showValidationSummary]="false">
+            <dxi-item itemType="group" [colSpan]="6" [colCount]="6">
+
+                <dxi-item dataField="usuario" [colSpan]="2" [editorOptions]="{disabled:disable_usuario}">
+                    <dxi-validation-rule type="required" message="Id Requerido">
+                    </dxi-validation-rule>
+                </dxi-item>
+                <dxi-item itemType="empty" [colSpan]="4">
+                </dxi-item>
+                <dxi-item dataField="nombre" [colSpan]="2"></dxi-item>
+                <dxi-item itemType="empty" [colSpan]="4">
+                </dxi-item>
+                <dxi-item dataField="password" [editorOptions]="{mode:'password'}" [colSpan]="2"></dxi-item>
+                <dxi-item itemType="empty" [colSpan]="4">
+                </dxi-item>
+                <dxi-item dataField="clave_confirm" [editorOptions]="{mode:'password'}" [colSpan]="2"></dxi-item>
+
+            </dxi-item>
+        </dx-form>
+        <div class="botones-captura">
+            <dx-button (click)="Grabar()" text="Grabar" icon="fas fa-save">
+            </dx-button>
+            <dx-button (click)="Limpiar()" text="Ignorar" icon="fas fa-broom">
+            </dx-button>
+            <dx-button (click)="Regresar()" text="Regresar" icon="fas fa-reply">
+            </dx-button>
+        </div>
+
+    </div>
+</div>

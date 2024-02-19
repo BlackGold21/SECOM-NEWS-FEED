@@ -1,0 +1,48 @@
+<div class="content-block">
+    <div class="dx-card responsive-paddings">
+        <dx-load-panel [closeOnOutsideClick]="false" [(visible)]="cargando" [showPane]="true" [shading]="true"
+            shadingColor="rgba(0,0,0,0.4)" message="Cargando...">
+        </dx-load-panel>
+        <dx-form class="formulario" [formData]="Actividades" [labelLocation]="'top'" [showColonAfterLabel]="true"
+            validationGroup="Actividades" [showValidationSummary]="false">
+            <dxi-item itemType="group" [colSpan]="6" [colCount]="6">
+
+                <dxi-item dataField="tipomov" [colSpan]="2" [label]="{text:'Tipo'}"
+                    [editorOptions]="{items:tipos,valueExpr:'id',layout:'horizontal',onValueChanged:cambiatipo}"
+                    editorType="dxRadioGroup">
+                </dxi-item>
+                <dxi-item itemType="empty" [colSpan]="4"></dxi-item>
+
+                <dxi-item dataField="id_ente" [colSpan]="2" editorType="dxSelectBox" [label]="{text:'Ente'}"
+                    [editorOptions]="{items:ente , valueExpr:'id_ente', displayExpr:'nombre',disabled:VisibleEnte}"></dxi-item>
+        
+                <dxi-item dataField="id_proyecto" [colSpan]="3" editorType="dxSelectBox" [label]="{text:'Proyecto'}"
+                    [editorOptions]="{items:proyecto , valueExpr:'id_proyecto', displayExpr:'nombre',disabled:VisibleProyecto}"></dxi-item>
+                    <dxi-item itemType="empty" [colSpan]="3"></dxi-item>
+
+
+                <dxi-item dataField="fecha" [editorOptions]="{displayFormat:'dd/MM/yyyy',useMaskBehavior:true}"
+                    editorType="dxDateBox" [colSpan]="2"></dxi-item>
+                <dxi-item itemType="empty" [colSpan]="4"></dxi-item>
+
+                <dxi-item dataField="titulo" [colSpan]="2"></dxi-item>
+                <dxi-item itemType="empty" [colSpan]="4"></dxi-item>
+
+                <dxi-item dataField="descripcion"  [editorOptions]="{height:150}"  [colSpan]="4" editorType="dxTextArea"></dxi-item>
+                <dxi-item itemType="empty" [colSpan]="2"></dxi-item>
+
+                <dxi-item dataField="observacion"  [editorOptions]="{height:100}" editorType="dxTextArea"  [colSpan]="4"></dxi-item>
+                <dxi-item itemType="empty" [colSpan]="2"></dxi-item>
+            </dxi-item>
+        </dx-form>
+        <div class="botones-captura">
+            <dx-button (click)="Grabar()" text="Grabar" icon="fas fa-save">
+            </dx-button>
+            <dx-button (click)="Limpiar()" text="Ignorar" icon="fas fa-broom">
+            </dx-button>
+            <dx-button (click)="Regresar()" text="Regresar" icon="fas fa-reply">
+            </dx-button>
+        </div>
+
+    </div>
+</div>
